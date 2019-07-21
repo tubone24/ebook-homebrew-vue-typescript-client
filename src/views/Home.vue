@@ -1,18 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+      <h1>Ebook Homebrew Home</h1>
+    <img alt="ebook logo" src="../assets/logo.png">
+      <h2>How to use it?</h2>
+      <a href="https://ebook-homebrew.readthedocs.io/en/latest/">ebook-homebrew Docs</a><br>
+      <a href="https://ebook-homebrew.herokuapp.com/docs">ebook-homebrew API Ref</a><br>
+      Or try to click "Sample" at Top Nav bar, Use ebook-homebrew vue client.
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Vue } from 'vue-property-decorator';
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
 export default class Home extends Vue {}
 </script>
