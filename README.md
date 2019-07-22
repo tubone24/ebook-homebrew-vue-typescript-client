@@ -2,6 +2,8 @@
 
 > Make pdf file which you use e-books by take in some image files such as jpeg, png and gif.
 
+[![CircleCI](https://circleci.com/gh/tubone24/ebook-homebrew-vue-typescript-client.svg?style=svg)](https://circleci.com/gh/tubone24/ebook-homebrew-vue-typescript-client)
+[![codecov](https://codecov.io/gh/tubone24/ebook-homebrew-vue-typescript-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tubone24/ebook-homebrew-vue-typescript-client)
 ## Project setup
 ```
 npm install
