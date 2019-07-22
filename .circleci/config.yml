@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:lts-browsers
+
+    steps:
+      - checkout
+      - restore_cache:
+          key: projectname-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: System information
+          command: |
+            echo "Node $(node -v)"
+            echo "NPM v$(npm --version)"
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Unit Test
+          command: npm run test:unit
+      - run:
+          name: e2e Test
+          command: npm run test:e2e
+      - run:
+          name: ESLint
+          command: npm run lint
+      - run:
+          name: codecov
+          command: npm run codecov
+      - store_artifacts:
+          path: test/e2e/reports
+          destination: reports
+      - save_cache:
+          key: projectname-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/workspace/node_modules

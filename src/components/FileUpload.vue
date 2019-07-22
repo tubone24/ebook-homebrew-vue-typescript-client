@@ -1,5 +1,5 @@
 <template>
-    <div class="FileUpload">
+    <div class="FileUpload" id="FileUpload">
         <div>
             <select id="format-select" v-model="selected">
                 <option disabled value="">Please select one</option>
@@ -14,7 +14,7 @@
             <input id="file-choice" type="file" @change="onFileChange" multiple="multiple" accept="image/*">
         </div>
         <div v-else id="selected-images">
-            <img :src="image"/>
+            <img :src="image" alt="select image"/>
             <button id="remove-image" class="btn btn-danger" @click="removeImage">Remove images</button>
             <div v-if="selected && images">
                 <button id="post-image" class="btn btn-primary" @click="postImage">Post images</button>

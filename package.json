@@ -1,17 +1,22 @@
 {
   "name": "ebook-homebrew-vue-typescript-client",
   "version": "0.1.0",
+  "description": "Make pdf file which you use e-books by take in some image files such as jpeg, png and gif.",
+  "author": "tubone <tubo.yyyuuu@gmail.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "codecov": "codecov"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap-vue": "^2.0.0-rc.26",
+    "codecov": "^3.5.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
