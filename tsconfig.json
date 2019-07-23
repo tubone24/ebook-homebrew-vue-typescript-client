@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": "./static",
+    "baseUrl": ".",
     "types": [
       "webpack-env",
       "jest"
