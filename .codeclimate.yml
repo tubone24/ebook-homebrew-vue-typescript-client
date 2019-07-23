@@ -1,9 +1,4 @@
 plugins:
   tslint:
   enabled: true
-  config:
-    config: tslint.json
-    extensions:
-      - .ts
-      - .vue
-
+  config: tslint.json
