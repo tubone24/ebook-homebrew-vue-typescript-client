@@ -1,5 +1,6 @@
 <template>
   <div class="sample">
+      <h1>Ebook Homebrew Convert PDF Sample</h1>
     <img alt="ebook logo" src="../assets/logo.png">
       <FileUpload />
   </div>

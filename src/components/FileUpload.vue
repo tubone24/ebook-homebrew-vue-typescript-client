@@ -16,13 +16,13 @@
         <div v-else id="selected-images">
             <img :src="image" alt="select image"/>
             <button id="remove-image" class="btn btn-danger" @click="removeImage">Remove images</button>
-            <div v-if="selected && images">
+            <div v-if="selected && image">
                 <button id="post-image" class="btn btn-primary" @click="postImage">Post images</button>
             </div>
-            <div v-if="uploadId">
-                <span id="upload-id">UploadId: {{ uploadId }}</span>
+            <div v-if="this.$store.getters['fileUpload/getUploadId']">
+                <span id="upload-id">UploadId: {{ this.$store.getters['fileUpload/getUploadId'] }}</span>
             </div>
-            <div v-if="uploadId">
+            <div v-if="this.$store.getters['fileUpload/getUploadId']">
                 <div class="row">
                     <div class="col-sm-6">
                         <button id="convert-images" class="btn btn-info" @click="convertImages">Convert images</button>
@@ -48,9 +48,7 @@
     @Component
     export default class FileUpload extends Vue {
         private image: string = '';
-        private images: string[] = [];
         private selected: string = '';
-        private uploadId: string = '';
         private converted: boolean = false;
 
         public async onFileChange(e: any): Promise<void> {
@@ -71,7 +69,7 @@
             const reader = new FileReader();
             reader.onload = (e: any) => {
                 this.image = e.target.result;
-                this.images.push(e.target.result);
+                this.$store.commit('fileUpload/addImage', e.target.result);
             };
             return new Promise((resolve, reject) => {
                 reader.readAsDataURL(file);
@@ -84,22 +82,23 @@
         }
 
         public async postImage(e: any): Promise<void> {
+            this.$store.commit('fileUpload/setContentType', this.selected);
             const res = await axios.post(backendURL + 'data/upload', {
-                contentType: this.selected,
-                images: this.images,
+                contentType: this.$store.getters['fileUpload/getContentType'],
+                images: this.$store.getters['fileUpload/getImages'],
             });
-            this.uploadId = res.data.upload_id;
+            this.$store.commit('fileUpload/setUploadId', res.data.upload_id);
         }
 
         public async convertImages(e: any): Promise<void> {
             await axios.post(backendURL + 'convert/pdf', {
-                contentType: this.selected,
-                uploadId: this.uploadId,
+                contentType: this.$store.getters['fileUpload/getContentType'],
+                uploadId: this.$store.getters['fileUpload/getUploadId'],
             });
             let statusCode = 404;
             while (statusCode === 200) {
                 const res = await axios.post(backendURL + 'convert/pdf/download', {
-                    uploadId: this.uploadId,
+                    uploadId: this.$store.getters['fileUpload/getUploadId'],
                 });
                 statusCode = res.status;
             }
@@ -108,7 +107,7 @@
 
         public async downloadPDF(e: any): Promise<void> {
             const res = await axios.post(backendURL + 'convert/pdf/download', {
-                uploadId: this.uploadId,
+                uploadId: this.$store.getters['fileUpload/getUploadId'],
             }, {responseType: 'blob'});
             const blob = new Blob([res.data], {type: 'application/pdf'});
             const link = document.createElement('a');
