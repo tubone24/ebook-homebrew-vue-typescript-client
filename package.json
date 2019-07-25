@@ -18,14 +18,18 @@
     "bootstrap-vue": "^2.0.0-rc.26",
     "codecov": "^3.5.0",
     "core-js": "^2.6.5",
+    "lodash": "^4.17.15",
     "tslint": "^5.18.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
-    "vue-router": "^3.0.3"
+    "vue-router": "^3.0.3",
+    "vuex": "^3.1.1",
+    "vuex-class": "^0.3.2"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
+    "@types/lodash": "^4.14.136",
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-e2e-nightwatch": "^3.9.0",
     "@vue/cli-plugin-typescript": "^3.9.0",

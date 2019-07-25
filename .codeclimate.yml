@@ -1,4 +1,4 @@
 plugins:
   tslint:
-  enabled: true
-  config: tslint.json
+    enabled: true
+    config: tslint.json
