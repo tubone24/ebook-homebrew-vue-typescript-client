@@ -32,6 +32,7 @@ module.exports = {
             .setValue('#file-choice', file)
             .saveScreenshot(path.resolve(__dirname, '../reports/screenshot1.png'))
             .click('#post-image')
+            .assert.elementPresent('#post-file-loader')
             .waitForElementVisible('#upload-id', 60000)
             .saveScreenshot(path.resolve(__dirname, '../reports/screenshot2.png'))
             .assert.elementPresent('#convert-images')

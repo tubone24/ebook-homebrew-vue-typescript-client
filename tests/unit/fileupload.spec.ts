@@ -15,7 +15,7 @@ describe('Fileupload.vue function unit test', () => {
     beforeEach(() => {
         store = new Vuex.Store({
             modules: {
-                fileUpload: fileUpload
+                fileUpload,
             },
         });
         wrapper = shallowMount(Fileupload, {store, localVue});
