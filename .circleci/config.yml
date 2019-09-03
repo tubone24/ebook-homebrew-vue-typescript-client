@@ -15,6 +15,7 @@ jobs:
             echo "Node $(node -v)"
             echo "NPM v$(npm --version)"
             chromedriver -v
+            google-chrome --version
       - run:
           name: Install dependencies
           command: npm install
