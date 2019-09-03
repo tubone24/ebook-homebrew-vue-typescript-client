@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:lts-browsers-legacy
+      - image: circleci/node:lts-browsers
 
     steps:
       - checkout
