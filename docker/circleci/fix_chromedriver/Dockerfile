@@ -49,7 +49,7 @@ RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/google-
     && google-chrome --version
 
 # Fix ChromeDriverVersion
-RUN curl --silent --show-error --location --fail --retry 4 --retry-delay 5 --output /tmp/chromedriver_linux64.zip "https://chromedriver.storage.googleapis.com/75.0.3770.140/chromedriver_linux64.zip" \
+RUN curl --silent --show-error --location --fail --retry 4 --retry-delay 5 --output /tmp/chromedriver_linux64.zip "https://chromedriver.storage.googleapis.com/77.0.3865.40/chromedriver_linux64.zip" \
     && cd /tmp \
     && unzip chromedriver_linux64.zip \
     && rm -rf chromedriver_linux64.zip \
