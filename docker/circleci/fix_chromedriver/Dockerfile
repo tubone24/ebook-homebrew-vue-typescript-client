@@ -41,13 +41,13 @@ RUN export GECKODRIVER_LATEST_RELEASE_URL=$(curl https://api.github.com/repos/mo
 
 # install chrome
 
-RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/google-chrome-beta_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb \
-    && (sudo dpkg -i /tmp/google-chrome-beta_current_amd64.deb || sudo apt-get -fy install)  \
-    && rm -rf /tmp/google-chrome-beta_current_amd64.deb \
+RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && (sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb || sudo apt-get -fy install)  \
+    && rm -rf /tmp/google-chrome-stable_current_amd64.deb \
     && google-chrome --version
 
 # Fix ChromeDriverVersion
-RUN curl --silent --show-error --location --fail --retry 4 --retry-delay 5 --output /tmp/chromedriver_linux64.zip "https://chromedriver.storage.googleapis.com/77.0.3865.40/chromedriver_linux64.zip" \
+RUN curl --silent --show-error --location --fail --retry 4 --retry-delay 5 --output /tmp/chromedriver_linux64.zip "https://chromedriver.storage.googleapis.com/2.46/chromedriver_linux64.zip" \
     && cd /tmp \
     && unzip chromedriver_linux64.zip \
     && rm -rf chromedriver_linux64.zip \
