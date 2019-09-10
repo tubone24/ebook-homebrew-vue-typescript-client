@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: tubone24/circleci:node-10.16.3-stretch-browsers-fix
+      - image: circleci/node:lts-browsers
 
     steps:
       - checkout
@@ -14,7 +14,6 @@ jobs:
           command: |
             echo "Node $(node -v)"
             echo "NPM v$(npm --version)"
-            which chromedriver
             chromedriver -v
             google-chrome --version
       - run:
