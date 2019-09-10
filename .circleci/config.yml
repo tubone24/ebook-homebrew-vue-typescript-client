@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:lts-browsers
+      - image: tubone24/circleci:node-10.16.3-stretch-browsers-fix
 
     steps:
       - checkout

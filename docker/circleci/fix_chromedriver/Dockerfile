@@ -41,11 +41,9 @@ RUN export GECKODRIVER_LATEST_RELEASE_URL=$(curl https://api.github.com/repos/mo
 
 # install chrome
 
-RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && (sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb || sudo apt-get -fy install)  \
-    && rm -rf /tmp/google-chrome-stable_current_amd64.deb \
-    && sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox --no-sandbox|g' \
-        "/opt/google/chrome/google-chrome" \
+RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/google-chrome-beta_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb \
+    && (sudo dpkg -i /tmp/google-chrome-beta_current_amd64.deb || sudo apt-get -fy install)  \
+    && rm -rf /tmp/google-chrome-beta_current_amd64.deb \
     && google-chrome --version
 
 # Fix ChromeDriverVersion
@@ -53,8 +51,8 @@ RUN curl --silent --show-error --location --fail --retry 4 --retry-delay 5 --out
     && cd /tmp \
     && unzip chromedriver_linux64.zip \
     && rm -rf chromedriver_linux64.zip \
-    && sudo mv chromedriver /usr/local/bin/chromedriver \
-    && sudo chmod +x /usr/local/bin/chromedriver \
+    && sudo mv chromedriver /usr/bin/chromedriver \
+    && sudo chmod +x /usr/bin/chromedriver \
     && chromedriver --version
 
 # start xvfb automatically to avoid needing to express in circle.yml
