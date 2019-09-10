@@ -31,7 +31,7 @@
     "@types/jest": "^23.1.4",
     "@types/lodash": "^4.14.136",
     "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-e2e-nightwatch": "^3.9.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.11.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
     "@vue/cli-plugin-unit-jest": "^3.9.0",
     "@vue/cli-service": "^3.9.0",

@@ -20,6 +20,9 @@ jobs:
           name: Install dependencies
           command: npm install
       - run:
+          name: Fix ChromeDriver with nightwatch.js
+          command: mv -f /tmp/chromedriver node_modules/chromedriver/lib/chromedriver/chromedriver
+      - run:
           name: Build
           command: npm run build
       - run:
