@@ -7,6 +7,8 @@
 [![MIT](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![codecov](https://codecov.io/gh/tubone24/ebook-homebrew-vue-typescript-client/branch/master/graph/badge.svg)](https://codecov.io/gh/tubone24/ebook-homebrew-vue-typescript-client)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bbaafb647be70bc552e2/maintainability)](https://codeclimate.com/github/tubone24/ebook-homebrew-vue-typescript-client/maintainability)
+[![CodeFactor](https://www.codefactor.io/repository/github/tubone24/ebook-homebrew-vue-typescript-client/badge)](https://www.codefactor.io/repository/github/tubone24/ebook-homebrew-vue-typescript-client)
+
 ## Project setup
 ```
 npm install
