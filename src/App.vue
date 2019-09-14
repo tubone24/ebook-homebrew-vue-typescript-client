@@ -51,7 +51,7 @@
 }
 
 #particles-js {
-    background-image: url("./assets/bg.jpg");
+    background-image: url("https://raw.githubusercontent.com/tubone24/ebook-homebrew-vue-typescript-client/master/src/assets/bg.jpg");
     background-size: cover;
     position: absolute;
     top: 0;
