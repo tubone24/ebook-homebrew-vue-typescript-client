@@ -32,9 +32,12 @@
     const backendURL = mixins.data().backendURL;
     @Component
     export default class FileList extends Vue {
-        private uploadList: Array<Map<string, string>> = [];
+        public uploadList: Array<Map<string, string>> = [];
 
         private async created() {
+            await this.updateFileList();
+        }
+        public async updateFileList() {
             const res = await axios.get(backendURL + 'data/upload/list');
             if (res.status === 200) {
                 this.uploadList = res.data.fileList;
