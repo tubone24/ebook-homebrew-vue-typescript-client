@@ -106,10 +106,13 @@
             });
             let statusCode = 404;
             while (statusCode === 200) {
-                const res = await axios.post(backendURL + 'convert/pdf/download', {
+                await axios.post(backendURL + 'convert/pdf/download', {
                     uploadId: this.$store.getters['fileUpload/getUploadId'],
+                }).then((response) => {
+                    statusCode = response.status;
+                }).catch((err) => {
+                    statusCode = err.response.status;
                 });
-                statusCode = res.status;
             }
             this.converted = true;
         }

@@ -64,7 +64,7 @@
             }, {responseType: 'blob'}).catch((err) => {
                     if (err.response.status === 404) {
                         this.$toasted.show('No File!!', options);
-                        throw err;
+                        throw new Error('PdfFileNotFound');
                     } else {
                         this.$toasted.show('Error!!');
                         throw err;

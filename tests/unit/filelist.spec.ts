@@ -55,4 +55,12 @@ describe('FileList.vue function unit test', () => {
         await wrapper.vm.updateFileList();
         expect(wrapper.vm._data.uploadList).toEqual([]);
     });
+
+    it('downloadPDF', async () => {
+        const resp200 = {status: 200, data: new Blob()} as any;
+        (axios.post as any).mockResolvedValue(resp200);
+        wrapper = shallowMount(FileList);
+        const actual = await wrapper.vm.downloadPDF('test');
+        expect(actual.type).toBe('application/pdf');
+    });
 });
