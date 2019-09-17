@@ -7,11 +7,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 // @ts-ignore
 import VueParticles from 'vue-particles';
+import Toasted from 'vue-toasted';
 
 import store from './store/';
 
 Vue.use(BootstrapVue);
 Vue.use(VueParticles);
+Vue.use(Toasted);
 
 Vue.config.productionTip = false;
 
