@@ -23,7 +23,7 @@
     "lodash": "^4.17.15",
     "tslint": "^5.20.1",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
+    "vue-class-component": "^7.2.2",
     "vue-particles": "^1.0.9",
     "vue-property-decorator": "^8.3.0",
     "vue-router": "^3.1.3",
