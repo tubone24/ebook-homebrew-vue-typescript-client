@@ -21,7 +21,7 @@
     "codecov": "^3.6.1",
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
-    "tslint": "^5.20.1",
+    "tslint": "^6.1.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-particles": "^1.0.9",
