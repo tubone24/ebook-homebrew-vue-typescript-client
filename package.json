@@ -20,7 +20,7 @@
     "bootstrap-vue": "^2.1.0",
     "codecov": "^3.6.1",
     "core-js": "^2.6.5",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "tslint": "^5.20.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
