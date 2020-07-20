@@ -18,7 +18,7 @@
     "@sentry/integrations": "^5.6.1",
     "axios": "^0.19.2",
     "bootstrap-vue": "^2.1.0",
-    "codecov": "^3.6.1",
+    "codecov": "^3.7.1",
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
     "tslint": "^5.20.1",
